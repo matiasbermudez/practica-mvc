@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "jsonfile": "^6.1.0",
+    "minimist": "^1.2.8"
+  },
+  "devDependencies": {
+    "@types/jsonfile": "^6.1.4",
+    "@types/minimist": "^1.2.5"
+  }
+}

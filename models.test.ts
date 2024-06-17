@@ -1,21 +1,30 @@
 import { Product, ProductCollection } from "./models";
 
-//TEST MODELS ADD, GETONE, GETALL
+//TEST MODELS ADD, GETONE, GETALL, LOAD
+
+
 
 const test = new ProductCollection()
-const persona0 = new Product(0, "Luffy")
-const persona1 = new Product(1, "Zoro")
-const persona2 = new Product(2, "Shanks")
+const persona6 = new Product(6, "Ace")
+const persona7 = new Product(7, "Sabo")
+const persona8 = new Product(8, "Nami")
 
-//TESTADDONE
-test.addOne(persona0.id, persona0.name)
-test.addOne(persona1.id, persona1.name)
-test.addOne(persona2.id, persona2.name)
+//TEST LOAD
+test.load().then(data => {
+    console.log("Datos Cargados", data)
 
-//TESTGETALL
-console.log(test.getAll())
+    //TESTADDONE
+    test.addOne(persona6.id, persona6.name)
+    test.addOne(persona7.id, persona7.name)
+    test.addOne(persona8.id, persona8.name)
+    //TESTGETONEBYID
 
-//TESTGETONEBYID
+    console.log("Encontrado0: ", test.getById(7))
+    console.log("Encontrado1: ", test.getById(4))
+    //TESTGETALL
+    console.log(test.getAll())
+})
 
-console.log("Encontrado0: ",test.getById(0))
-console.log("Encontrado1: ",test.getById(1))
+
+
+
